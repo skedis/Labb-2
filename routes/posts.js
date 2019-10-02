@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router()
 
 router.get('/posts', (req, res) => {
-  res.send('te');
+  res.send('test');
 });
 
 router.post('/posts', (req, res) => {
-
+  
 });
 
 router.put('/posts/:postId', (req, res) => {
