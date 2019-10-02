@@ -1,8 +1,9 @@
 const express = require('express');
-const router = express.Router()
+const router = express.Router();
+
 
 router.get('/posts/:postId/comments', (req, res) => {
-  res.send('test2');
+
 });
 
 router.post('/posts/:postId/comments', (req, res) => {
