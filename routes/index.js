@@ -1,7 +1,10 @@
-comments = require('./comments');
-posts = require('./posts');
+const express = require('express');
+const router = express.Router();
 
-module.exports = {
-  comments,
-  posts
-}
+const commentsRoutes = require('./comments');
+const postsRoutes = require('./posts');
+
+router.use(postsRoutes);
+router.use(commentsRoutes);
+
+module.exports = router;

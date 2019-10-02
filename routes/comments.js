@@ -1,25 +1,20 @@
-module.exports = {
-  getComments(req, res) {
-    app.get('/posts/:postId/comments', (req, res) => {
+const express = require('express');
+const router = express.Router()
 
-    });
-  },
+router.get('/posts/:postId/comments', (req, res) => {
+  res.send('ted');
+});
 
-  addComment(req, res) {
-    app.post('/posts/:postId/comments', (req, res) => {
+router.post('/posts/:postId/comments', (req, res) => {
 
-    });
-  },
+});
 
-  updateComment(req, res) {
-    app.put('/posts/:postId/comments/commentId', (req, res) => {
+router.put('/posts/:postId/comments/commentId', (req, res) => {
 
-    });
-  },
+});
 
-  removeComment(req, res) {
-    app.delete('/posts/:postId/comments/commentId', (req, res) => {
+router.delete('/posts/:postId/comments/commentId', (req, res) => {
 
-    });
-  }
-}
+});
+
+module.exports = router;

@@ -1,25 +1,20 @@
-module.exports = {
-  getPosts(req, res) {
-    app.get('/posts', (req, res) => {
-      res.send('getting posts');
-    });
-  },
+const express = require('express');
+const router = express.Router()
 
-  addPost(req, res) {
-    app.post('/posts', (req, res) => {
+router.get('/posts', (req, res) => {
+  res.send('te');
+});
 
-    });
-  },
+router.post('/posts', (req, res) => {
 
-  updatePost(req, res) {
-    app.put('/posts/:postId/', (req, res) => {
+});
 
-    });
-  },
+router.put('/posts/:postId', (req, res) => {
 
-  removePost(req, res) {
-    app.delete('/posts/:postId/', (req, res) => {
+});
 
-    });
-  }
-}
+router.delete('/posts/:postId', (req, res) => {
+
+});
+
+module.exports = router;
