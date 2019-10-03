@@ -1,37 +1,34 @@
 const express = require('express');
 const router = express.Router();
 
+router.use(express.json());
 
-let store = {
-  posts:
-    [
-      {
-        name: 'Top 10 ES6 Features every Web Developer must know',
-        url: 'https://webapplog.com/es6',
-        text: 'This essay will give you a quick introduction to ES6. If you don’t know what is ES6 it’s a new JavaScript implementation.',
-        comments: [
-          'No type optimization at all',
-          'I think you’re undervaluing the benefit of ‘let’ and ‘const’.',
-          '(p1,p2)=>{ ... }, i understand this, thank you!',
-        ],
-      },
-    ],
-};
+let store = require('./data');
+
 
 router.get('/posts', (req, res) => {
-  res.send();
+  res.status(200).send(store.posts);
 });
 
 router.post('/posts', (req, res) => {
+  let newPost = req.body;
+  let id = store.posts.length;
 
+  store.posts.push(newPost);
+
+  res.status(201).send({ id: id });
 });
 
 router.put('/posts/:postId', (req, res) => {
+  store.posts[req.params.postId] = req.body;
 
+  res.status(200).send(store.posts[req.params.id])
 });
 
 router.delete('/posts/:postId', (req, res) => {
+  store.posts.splice(req.params.postId, 1)
 
+  res.status(204).send()
 });
 
 module.exports = router;
