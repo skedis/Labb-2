@@ -8,7 +8,7 @@ const app = express();
 app.use(morgan('dev'));
 app.use(errorhandler());
 
-// Connecting all endpoints
+// Kopplar samman alla routes/endpoints från index.js
 app.use(routes);
 
 app.listen(3000, () => {

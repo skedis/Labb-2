@@ -1,4 +1,3 @@
-/* eslint-disable prefer-const */
 const express = require('express');
 
 const router = express.Router();
@@ -6,7 +5,7 @@ router.use(express.json());
 
 let store = require('./data');
 
-
+// Endpoints för kommentarer
 router.get('/posts/:postId/comments', (req, res) => {
   res.status(200).send(store.posts[req.params.postId].comments);
 });

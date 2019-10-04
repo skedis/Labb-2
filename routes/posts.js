@@ -5,7 +5,7 @@ router.use(express.json());
 
 let store = require('./data');
 
-
+// Endpoints för posts
 router.get('/posts', (req, res) => {
   res.status(200).send(store.posts);
 });

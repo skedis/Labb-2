@@ -1,3 +1,4 @@
+// JSON objekt som används för att lagra data i minnet
 module.exports = {
   posts:
     [
